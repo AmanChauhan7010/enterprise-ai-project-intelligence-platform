@@ -1,0 +1,114 @@
+/* Enterprise AI Project Intelligence Platform --- Off-White SaaS Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+html, body, [class*="css"] {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1E293B;
+    font-size: 14px;
+    background-color: #F8FAFC;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #0F172A;
+}
+
+code, .mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85em;
+    color: #0369A1;
+}
+
+/* Completely Suppress Default Left Sidebar & Header Controls */
+section[data-testid="stSidebar"] { display: none !important; }
+button[data-testid="baseButton-headerNoPadding"] { display: none !important; }
+div[data-testid="collapsedControl"] { display: none !important; }
+header[data-testid="stHeader"] { display: none !important; }
+
+/* Page Spacing & Densification */
+.main .block-container {
+    padding-top: 1.25rem;
+    padding-bottom: 3.5rem;
+    max-width: 96rem;
+}
+
+/* Top Horizontal Navigation Bar Styling */
+a[data-testid="stPageLink-NavLink"] {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-weight: 600;
+    font-size: 13px;
+    color: #475569;
+    text-align: center;
+    transition: all 0.15s ease-in-out;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.03);
+}
+
+a[data-testid="stPageLink-NavLink"]:hover {
+    background-color: #EFF6FF;
+    border-color: #BFDBFE;
+    color: #1D4ED8;
+    box-shadow: 0 2px 4px 0 rgba(37,99,235,0.08);
+}
+
+/* Crisp Light Mode Status Tags */
+.status-pill {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 4px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.pill-active { background-color: #E0F2FE; color: #0369A1; border: 1px solid #BAE6FD; }
+.pill-delayed { background-color: #FEF3C7; color: #B45309; border: 1px solid #FDE68A; }
+.pill-completed { background-color: #DCFCE7; color: #15803D; border: 1px solid #BBF7D0; }
+.pill-planned { background-color: #F1F5F9; color: #475569; border: 1px solid #E2E8F0; }
+
+/* Clean White Container Cards */
+.industry-panel {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+}
+
+.metric-container {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 16px 20px;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+}
+
+/* Streamlit Tabs Customization */
+div[data-testid="stTabs"] button {
+    font-weight: 600;
+    font-size: 13px;
+    color: #64748B;
+    padding-bottom: 8px;
+}
+
+div[data-testid="stTabs"] button[aria-selected="true"] {
+    color: #0066CC;
+    border-bottom: 2px solid #0066CC;
+}
+
+/* Streamlit DataFrame styling overrides */
+div[data-testid="stDataFrame"] {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+
+/* Clean up Streamlit defaults */
+#MainMenu {visibility: hidden;}
+footer {visibility: hidden;}
