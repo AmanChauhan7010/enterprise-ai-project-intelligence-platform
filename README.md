@@ -1,4 +1,4 @@
-# Enterprise AI Project Intelligence Platform 🏢
+# Enterprise AI Project Intelligence Platform 
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://streamlit.io)
 [![Python Version](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
