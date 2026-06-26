@@ -30,27 +30,27 @@ graph TD
     classDef ml fill:#DCFCE7,stroke:#16A34A,stroke-width:2px,color:#0F172A;
     classDef ui fill:#FFFFFF,stroke:#0066CC,stroke-width:2px,color:#0F172A;
 
-    subgraph Tier 1: Persistence & Data Mesh
-        A1[(projects.csv <br/> 150 Initiatives)] ::: persistence
-        A2[(employees.csv <br/> 560 Headcount)] ::: persistence
-        A3[(sprints.csv <br/> 900 Cadence Logs)] ::: persistence
-        A4[(meetings.csv <br/> 3800 Governance Syncs)] ::: persistence
+    subgraph T1 ["Tier 1: Persistence & Data Mesh"]
+        A1["projects.csv (150 Initiatives)"] ::: persistence
+        A2["employees.csv (560 Headcount)"] ::: persistence
+        A3["sprints.csv (900 Cadence Logs)"] ::: persistence
+        A4["meetings.csv (3800 Governance Syncs)"] ::: persistence
     end
 
-    subgraph Tier 2: Domain Governance Engines
-        B1[Weighted Health Scorer <br/> Composite 0-100 Index] ::: engine
-        B2[Heuristic Insights Engine <br/> Anomaly & Directive Synthesis] ::: engine
+    subgraph T2 ["Tier 2: Domain Governance Engines"]
+        B1["Weighted Health Scorer (0-100 Index)"] ::: engine
+        B2["Heuristic Insights Engine"] ::: engine
     end
 
-    subgraph Tier 3: Machine Learning Inference Core
-        C1[XGBClassifier Pipeline <br/> Serialized .joblib Artifact] ::: ml
-        C2[Real-Time What-If Simulator <br/> Live Parameter Perturbation] ::: ml
-        C3[SHAP Proxy Attribution <br/> Global Feature Importance] ::: ml
+    subgraph T3 ["Tier 3: Machine Learning Inference Core"]
+        C1["XGBClassifier Pipeline (.joblib Artifact)"] ::: ml
+        C2["Real-Time What-If Simulator"] ::: ml
+        C3["SHAP Proxy Attribution"] ::: ml
     end
 
-    subgraph Tier 4: Off-White SaaS Presentation UI Mesh
-        D1[Top Horizontal Navbar <br/> Centralized Screen Router] ::: ui
-        D2[Diagnostic Viewport <br/> Plotly Telemetry & Ledgers] ::: ui
+    subgraph T4 ["Tier 4: Off-White SaaS Presentation UI"]
+        D1["Top Horizontal Navbar Router"] ::: ui
+        D2["Diagnostic Viewports & Plotly Telemetry"] ::: ui
     end
 
     A1 --> B1
