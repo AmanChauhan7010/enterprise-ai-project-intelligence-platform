@@ -25,40 +25,50 @@ The platform operates on a four-tier architecture separating synthetic persisten
 
 ```mermaid
 graph TD
+    subgraph Tier1 ["Tier 1: Persistence & Data Mesh"]
+        A1["projects.csv (150 Initiatives)"]
+        A2["employees.csv (560 Headcount)"]
+        A3["sprints.csv (900 Cadence Logs)"]
+        A4["meetings.csv (3800 Governance Syncs)"]
+    end
+
+    subgraph Tier2 ["Tier 2: Domain Governance Engines"]
+        B1["Weighted Health Scorer (0-100 Index)"]
+        B2["Heuristic Insights Engine"]
+    end
+
+    subgraph Tier3 ["Tier 3: Machine Learning Inference Core"]
+        C1["XGBClassifier Pipeline (.joblib Artifact)"]
+        C2["Real-Time What-If Simulator"]
+        C3["SHAP Proxy Attribution"]
+    end
+
+    subgraph Tier4 ["Tier 4: Off-White SaaS Presentation UI"]
+        D1["Top Horizontal Navbar Router"]
+        D2["Diagnostic Viewports & Plotly Charts"]
+    end
+
+    A1 --> B1
+    A1 --> C1
+    A2 --> B2
+    A3 --> B2
+    A4 --> B2
+    B1 --> D2
+    B2 --> D2
+    C1 --> C2
+    C2 --> C3
+    C3 --> D2
+    D1 --> D2
+
     classDef persistence fill:#F1F5F9,stroke:#94A3B8,stroke-width:1px,color:#0F172A;
     classDef engine fill:#E0F2FE,stroke:#0284C7,stroke-width:2px,color:#0F172A;
     classDef ml fill:#DCFCE7,stroke:#16A34A,stroke-width:2px,color:#0F172A;
     classDef ui fill:#FFFFFF,stroke:#0066CC,stroke-width:2px,color:#0F172A;
 
-    subgraph T1 ["Tier 1: Persistence & Data Mesh"]
-        A1["projects.csv (150 Initiatives)"] ::: persistence
-        A2["employees.csv (560 Headcount)"] ::: persistence
-        A3["sprints.csv (900 Cadence Logs)"] ::: persistence
-        A4["meetings.csv (3800 Governance Syncs)"] ::: persistence
-    end
-
-    subgraph T2 ["Tier 2: Domain Governance Engines"]
-        B1["Weighted Health Scorer (0-100 Index)"] ::: engine
-        B2["Heuristic Insights Engine"] ::: engine
-    end
-
-    subgraph T3 ["Tier 3: Machine Learning Inference Core"]
-        C1["XGBClassifier Pipeline (.joblib Artifact)"] ::: ml
-        C2["Real-Time What-If Simulator"] ::: ml
-        C3["SHAP Proxy Attribution"] ::: ml
-    end
-
-    subgraph T4 ["Tier 4: Off-White SaaS Presentation UI"]
-        D1["Top Horizontal Navbar Router"] ::: ui
-        D2["Diagnostic Viewports & Plotly Telemetry"] ::: ui
-    end
-
-    A1 --> B1
-    A1 --> C1
-    A2 & A3 & A4 --> B2
-    B1 & B2 --> D2
-    C1 --> C2 --> C3 --> D2
-    D1 --> D2
+    class A1,A2,A3,A4 persistence;
+    class B1,B2 engine;
+    class C1,C2,C3 ml;
+    class D1,D2 ui;
 ```
 
 ### 1. Ingestion & Persistence Tier (`data/`)
