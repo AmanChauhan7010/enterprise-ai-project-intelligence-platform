@@ -194,6 +194,13 @@ The platform will launch automatically in your default browser at `http://localh
 
 *(Note: On initial boot, if cached CSVs or ML models are absent, the application will automatically synthesize 5,400+ records and fit the XGBoost pipeline in sub-second background routines).*
 
+
+## 🌐 Live Deployment
+
+```bash
+https://enterprise-ai-project-intelligence.onrender.com
+```
+
 ---
 
 ## 🔮 Enterprise Extensibility & Roadmap
